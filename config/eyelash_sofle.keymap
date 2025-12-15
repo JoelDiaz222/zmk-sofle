@@ -38,23 +38,12 @@
     behaviors {
     };
 
-    macros {
-        lock_screen: new_macro {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings =
-                <&macro_press>,
-                <&kp LCTRL>,
-                <&macro_press>,
-                <&kp RIGHT_COMMAND>,
-                <&macro_press>,
-                <&kp Q>,
-                <&macro_release>,
-                <&kp RIGHT_COMMAND>,
-                <&macro_release>,
-                <&kp LCTRL>;
+    combos {
+        compatible = "zmk,combos";
 
-            label = "NEW_MACRO";
+        softoff {
+            bindings = <&soft_off>;
+            key-positions = <14 28 40>;
         };
     };
 
@@ -96,6 +85,7 @@
 &trans     &trans        &trans          &trans        &trans        &trans          &mkp LCLK        &trans   &trans   &trans      &trans     &trans
             >;
 
+            display-name = "layer2";
             sensor-bindings = <&scroll_encoder>;
         };
     };
